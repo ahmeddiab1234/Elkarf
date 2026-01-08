@@ -1,0 +1,346 @@
+/* ====== GLOBAL STYLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #222;
+  line-height: 1.6;
+  background: url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+/* White overlay for better text visibility */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0; /* was -1, now 0 to not block footer */
+}
+
+
+/* ====== HEADER ====== */
+header {
+  background: rgba(10, 25, 47, 0.9);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #a8b2d1;
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+nav a {
+  color: #64ffda;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #fff;
+  border-bottom: 2px solid #64ffda;
+}
+
+/* ====== MAIN CONTENT ====== */
+main {
+  flex: 1; /* takes remaining space */
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ====== ABOUT SECTION ====== */
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.personal-image {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.personal-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.personal-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 2 1 500px;
+}
+
+.about-text h2 {
+  color: #0a192f;
+  border-left: 4px solid #64ffda;
+  padding-left: 0.5rem;
+  margin-bottom: 0.8rem;
+  margin-top: 1rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+/* ====== Hover effect for About Text ====== */
+/* ====== Smooth Hover Effect for About Text ====== */
+.about-text p {
+  transition: transform 0.5s ease, font-weight 0.5s ease, color 0.5s ease;
+}
+
+.about-text p:hover {
+  font-weight: 600;        /* bolder */
+  transform: scale(1.03);  /* grows slightly */
+  color: #0a192f;          /* optional: darker text on hover */
+  cursor: text;
+}
+
+.about-text p:hover {
+  font-weight: 600;
+  transform: scale(1.03);
+  color: #0a192f;  /* slightly darker on hover */
+  cursor: text;
+}
+
+/* ====== LIST STYLING ====== */
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+ul li::before {
+  content: "▹";
+  color: #64ffda;
+  margin-right: 8px;
+}
+
+/* ====== FOOTER ====== */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #64ffda;
+  font-size: 1.5rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  transform: scale(1.3) rotate(-5deg);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(10, 25, 47, 0.95);
+  color: #a8b2d1;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ====== VOLUNTEERING GALLERY ====== */
+.vol-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.vol-gallery img {
+  width: calc(33% - 0.66rem); /* 3 images per row */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vol-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .vol-gallery img {
+    width: calc(50% - 0.5rem); /* 2 images per row on tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .vol-gallery img {
+    width: 100%; /* 1 image per row on mobile */
+  }
+}
+
+/* ====== ICPC SPECIAL GALLERY ====== */
+.icpc-gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.icpc-gallery img:first-child {
+  flex: 1; /* 1/3 of width roughly */
+  min-width: 100px;
+}
+
+.icpc-gallery img:last-child {
+  flex: 2; /* 2/3 of width */
+  min-width: 200px;
+}
+
+.icpc-gallery img {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.icpc-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .icpc-gallery img {
+    flex: 1 1 100%; /* stack on smaller screens */
+  }
+}
+
+
+/* ====== CERTIFICATES ====== */
+.cert-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.cert-img,
+.cert-img-small {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.cert-img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 1rem auto;
+}
+
+.cert-img-small {
+  width: 30%;
+  min-width: 180px;
+}
+
+.cert-img-small:hover {
+  transform: scale(1.05);
+}
+
+/* ====== ARTICLES / PROJECTS ====== */
+article {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* GitHub icon next to project title */
+h2 a i.fab.fa-github {
+  color: #333; /* GitHub dark gray */
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+  vertical-align: middle;
+}
+
+h2 a i.fab.fa-github:hover {
+  color: #64ffda;
+  transform: scale(1.3);
+}
+
+
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-text {
+    text-align: center;
+  }
+  nav a {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .about-text h2 {
+    font-size: 1.1rem;
+  }
+  .cert-img-small {
+    width: 45%;
+  }
+}
