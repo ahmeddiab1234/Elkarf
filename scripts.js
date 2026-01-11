@@ -87,3 +87,19 @@ if (!localStorage.getItem('theme')) {
   }
 }
 
+// ====== TYPING EFFECT ======
+const text = "Machine Learning & Deep Learning Engineer";
+let index = 0;
+const speed = 60;
+const typingEl = document.getElementById("typing");
+
+function typeEffect() {
+  if (index < text.length) {
+    typingEl.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, speed);
+  }
+}
+
+window.addEventListener("load", typeEffect);
+
