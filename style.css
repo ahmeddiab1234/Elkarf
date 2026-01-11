@@ -119,7 +119,7 @@ main {
   max-width: 300px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  transition: transform 0.7s ease;
 }
 
 .personal-image img:hover {
@@ -147,23 +147,14 @@ main {
 /* ====== Hover effect for About Text ====== */
 /* ====== Smooth Hover Effect for About Text ====== */
 .about-text p {
-  transition: transform 0.5s ease, font-weight 0.5s ease, color 0.5s ease;
-}
-
-.about-text p:hover {
-  font-weight: 600;        /* bolder */
-  transform: scale(1.03);  /* grows slightly */
-  color: #0a192f;          /* optional: darker text on hover */
-  cursor: text;
+  transition: transform 0.7s ease, font-weight 0.7s ease, color 0.5s ease;
 }
 
 .about-text p:hover {
   font-weight: 600;
   transform: scale(1.03);
-  color: #0a192f;  /* slightly darker on hover */
   cursor: text;
 }
-
 /* ====== LIST STYLING ====== */
 ul {
   list-style: none;
