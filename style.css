@@ -1,3 +1,21 @@
+:root {
+  --bg-overlay: rgba(255, 255, 255, 0.7);
+  --text-color: #222;
+  --heading-color: #0a192f;
+  --accent: #64ffda;
+  --card-bg: #ffffff;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --bg-overlay: rgba(10, 25, 47, 0.85);
+  --text-color: #e6e6e6;
+  --heading-color: #ffffff;
+  --accent: #64ffda;
+  --card-bg: #0f172a;
+}
+
+
 /* ====== GLOBAL STYLES ====== */
 * {
   margin: 0;
@@ -11,10 +29,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #222;
+  /* color: #222; */
+  color: var(--text-color);
   line-height: 1.6;
   background: url('assets/background.jpg') no-repeat center center fixed;
   background-size: cover;
+  z-index: 0;
 }
 
 
@@ -26,8 +46,9 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
-  z-index: 0; /* was -1, now 0 to not block footer */
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  background-color: var(--bg-overlay);
+  z-index: -1; /* was -1, now 0 to not block footer */
 }
 
 
@@ -119,7 +140,8 @@ main {
 
 .about-text p {
   font-size: 1rem;
-  color: #222;
+  /* color: #222; */
+  color: var(--text-color);
   margin-bottom: 1rem;
 }
 /* ====== Hover effect for About Text ====== */
@@ -182,7 +204,7 @@ footer {
   font-size: 0.9rem;
   flex-shrink: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -290,7 +312,8 @@ footer {
 
 /* ====== ARTICLES / PROJECTS ====== */
 article {
-  background: #fff;
+  /* background: #fff; */
+  background: var(--card-bg);
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   padding: 1.5rem;
@@ -344,3 +367,105 @@ h2 a i.fab.fa-github:hover {
     width: 45%;
   }
 }
+
+/* ====== ACTIVITIES ====== */
+.activity {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.activity h2 {
+  color: #0a192f;
+  margin-bottom: 1rem;
+  border-left: 4px solid #64ffda;
+  display: inline-block;
+  padding-left: 0.5rem;
+}
+
+.about-text h2,
+.activity h2 {
+  color: var(--heading-color);
+  border-left: 4px solid var(--accent);
+}
+
+
+/* ====== IMAGE SLIDER ====== */
+/* ====== FIXED IMAGE SLIDER ====== */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 420px;            /* 🔒 fixed height */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #0a192f;     /* fallback background */
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* 🔑 prevents stretching */
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+
+/* Arrows */
+/* ====== SLIDER ARROWS ====== */
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: #64ffda;
+
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.slider button:hover {
+  background: #64ffda;
+  color: #0a192f;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.5);
+}
+
+.slider .prev {
+  left: 16px;
+}
+
+.slider .next {
+  right: 16px;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+
