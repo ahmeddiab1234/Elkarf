@@ -40,3 +40,50 @@ const fadeInOnScroll = () => {
 // Trigger fade-in on scroll and on page load
 window.addEventListener('scroll', fadeInOnScroll);
 window.addEventListener('load', fadeInOnScroll);
+
+
+// ====== IMAGE SLIDER ======
+document.querySelectorAll('.slider').forEach(slider => {
+  const img = slider.querySelector('img');
+  const images = slider.dataset.images.split(',');
+  let index = 0;
+
+  slider.querySelector('.next').addEventListener('click', () => {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  });
+
+  slider.querySelector('.prev').addEventListener('click', () => {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  });
+});
+
+
+// ====== DARK MODE TOGGLE ======
+const toggleBtn = document.getElementById('theme-toggle');
+const icon = toggleBtn.querySelector('i');
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+  icon.classList.replace('fa-moon', 'fa-sun');
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+  icon.classList.toggle('fa-moon');
+  icon.classList.toggle('fa-sun');
+});
+
+if (!localStorage.getItem('theme')) {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon', 'fa-sun');
+  }
+}
+
