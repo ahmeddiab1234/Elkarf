@@ -1,25 +1,23 @@
-// ====== Smooth Scroll for Navigation Links ======
-document.querySelectorAll('nav a').forEach(link => {
+const selectAll = (selector, parent = document) => Array.from(parent.querySelectorAll(selector));
+const select = (selector, parent = document) => parent.querySelector(selector);
+
+selectAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     const target = link.getAttribute('href');
     if (target.startsWith('#')) {
       e.preventDefault();
-      const section = document.querySelector(target);
+      const section = select(target);
       section?.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
 
-// ====== Highlight Active Navigation Link ======
 const currentPage = window.location.pathname.split('/').pop();
-document.querySelectorAll('nav a').forEach(link => {
-  if (link.getAttribute('href') === currentPage) {
-    link.classList.add('active');
-  }
+selectAll('nav a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) link.classList.add('active');
 });
 
-// ====== Fade-In Animation on Scroll ======
-const fadeElements = document.querySelectorAll('section, article');
+const fadeElements = selectAll('section, article');
 
 fadeElements.forEach(el => {
   el.style.opacity = 0;
@@ -37,69 +35,90 @@ const fadeInOnScroll = () => {
   });
 };
 
-// Trigger fade-in on scroll and on page load
 window.addEventListener('scroll', fadeInOnScroll);
 window.addEventListener('load', fadeInOnScroll);
 
+selectAll('.slider').forEach(slider => {
+  const img = select('img', slider);
+  const images = slider.dataset.images.split(',');
+  let index = 0;
 
-// ====== IMAGE SLIDER ======
+  const updateImage = () => img.src = images[index];
+
+  select('.next', slider).addEventListener('click', () => {
+    index = (index + 1) % images.length;
+    updateImage();
+  });
+
+  select('.prev', slider).addEventListener('click', () => {
+    index = (index - 1 + images.length) % images.length;
+    updateImage();
+  });
+});
+
+
+const toggleBtn = select('#theme-toggle');
+const icon = select('i', toggleBtn);
+
+const applyTheme = (dark) => {
+  document.body.classList.toggle('dark-mode', dark);
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  icon.classList.toggle('fa-moon', !dark);
+  icon.classList.toggle('fa-sun', dark);
+};
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) applyTheme(savedTheme === 'dark');
+else if (window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme(true);
+
+toggleBtn.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark-mode');
+  applyTheme(isDark);
+});
+
+const typingEl = select('#typing');
+const typingText = "Machine Learning & Deep Learning Engineer";
+let typingIndex = 0;
+const typingSpeed = 60;
+
+const typeEffect = () => {
+  if (typingIndex < typingText.length) {
+    typingEl.textContent += typingText.charAt(typingIndex);
+    typingIndex++;
+    setTimeout(typeEffect, typingSpeed);
+  }
+};
+
+window.addEventListener('load', typeEffect);
+
 document.querySelectorAll('.slider').forEach(slider => {
   const img = slider.querySelector('img');
   const images = slider.dataset.images.split(',');
   let index = 0;
 
+  const w = slider.dataset.width ? parseInt(slider.dataset.width) : slider.offsetWidth;
+  const h = slider.dataset.height ? parseInt(slider.dataset.height) : slider.offsetHeight;
+
+  slider.style.position = 'relative';
+  slider.style.width = '100%';
+  slider.style.maxWidth = w + 'px';
+  slider.style.paddingTop = (h / w * 100) + '%'; 
+  slider.querySelector('img').style.position = 'absolute';
+  slider.querySelector('img').style.top = 0;
+  slider.querySelector('img').style.left = 0;
+  slider.querySelector('img').style.width = '100%';
+  slider.querySelector('img').style.height = '100%';
+  slider.querySelector('img').style.objectFit = 'cover';
+
+  const updateImage = () => img.src = images[index];
+
   slider.querySelector('.next').addEventListener('click', () => {
     index = (index + 1) % images.length;
-    img.src = images[index];
+    updateImage();
   });
 
   slider.querySelector('.prev').addEventListener('click', () => {
     index = (index - 1 + images.length) % images.length;
-    img.src = images[index];
+    updateImage();
   });
 });
-
-
-// ====== DARK MODE TOGGLE ======
-const toggleBtn = document.getElementById('theme-toggle');
-const icon = toggleBtn.querySelector('i');
-
-// Load saved theme
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
-  icon.classList.replace('fa-moon', 'fa-sun');
-}
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-
-  const isDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
-  icon.classList.toggle('fa-moon');
-  icon.classList.toggle('fa-sun');
-});
-
-if (!localStorage.getItem('theme')) {
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.classList.add('dark-mode');
-    icon.classList.replace('fa-moon', 'fa-sun');
-  }
-}
-
-// ====== TYPING EFFECT ======
-const text = "Machine Learning & Deep Learning Engineer";
-let index = 0;
-const speed = 60;
-const typingEl = document.getElementById("typing");
-
-function typeEffect() {
-  if (index < text.length) {
-    typingEl.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, speed);
-  }
-}
-
-window.addEventListener("load", typeEffect);
-

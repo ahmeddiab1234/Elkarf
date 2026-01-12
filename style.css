@@ -6,7 +6,6 @@
   --card-bg: #ffffff;
 }
 
-/* Dark Mode Variables */
 body.dark-mode {
   --bg-overlay: rgba(10, 25, 47, 0.85);
   --text-color: #e6e6e6;
@@ -60,17 +59,17 @@ body.dark-mode {
 .hero-cta {
   margin-top: 2.5rem;
   display: flex;
-  flex-wrap: wrap;                 /* 🔑 allows wrapping */
+  flex-wrap: wrap;               
   justify-content: center;
-  gap: clamp(0.6rem, 2vw, 1.2rem); /* responsive spacing */
+  gap: clamp(0.6rem, 2vw, 1.2rem); 
   max-width: 900px;
   margin-inline: auto;
 }
 
 
 .hero-cta a {
-  flex: 1 1 auto;                  /* 🔑 flexible sizing */
-  min-width: 140px;                /* prevents tiny buttons */
+  flex: 1 1 auto;               
+  min-width: 140px;               
   max-width: 220px;
 
   text-align: center;
@@ -95,6 +94,45 @@ body.dark-mode {
   color: #0a192f;
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 8px 22px rgba(100,255,218,0.4);
+}
+
+/* ====== PRIMARY CTA (Download CV) ====== */
+.hero-cta .cta-primary {
+  background: var(--accent);
+  color: #0a192f !important;
+
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  border: none;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.45);
+}
+
+.hero-cta .cta-primary i {
+  margin-right: 0.45rem;
+}
+
+.hero-cta .cta-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left,
+      rgba(255,255,255,0.45),
+      transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-cta .cta-primary:hover::before {
+  opacity: 1;
+}
+
+.hero-cta .cta-primary:hover {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 18px 40px rgba(100, 255, 218, 0.6);
 }
 
 
@@ -132,13 +170,10 @@ body {
   /* color: #222; */
   color: var(--text-color);
   line-height: 1.6;
-  background: url('assets/background.jpg') no-repeat center center fixed;
   background-size: cover;
   z-index: 0;
 }
 
-
-/* White overlay for better text visibility */
 body::before {
   content: '';
   position: fixed;
@@ -146,9 +181,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(255, 255, 255, 0.7); */
   background-color: var(--bg-overlay);
-  z-index: -1; /* was -1, now 0 to not block footer */
+  z-index: -1; 
 }
 
 
@@ -192,7 +226,7 @@ nav a.active {
 
 /* ====== MAIN CONTENT ====== */
 main {
-  flex: 1; /* takes remaining space */
+  flex: 1; 
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -202,12 +236,6 @@ main {
 
 
 /* ====== ABOUT SECTION ====== */
-/* .about-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-} */
 
 .about-container {
   background: rgba(255, 255, 255, 0.08);
@@ -279,8 +307,8 @@ main {
   font-size: 0.85rem;
   font-weight: 500;
 
-  background: rgba(10, 25, 47, 0.08);   /* ✅ visible in light mode */
-  color: #0a192f;                      /* dark readable text */
+  background: rgba(10, 25, 47, 0.08);  
+  color: #0a192f;                
 
   border: 1px solid rgba(10, 25, 47, 0.15);
 
@@ -296,14 +324,13 @@ body.dark-mode .skill-badges span {
   border: 1px solid rgba(100, 255, 218, 0.25);
 }
 
-
-
+/* ===== Light Mode Skill Hover ===== */
 .skill-badges span:hover {
   transform: translateY(-2px) scale(1.05);
-  background: var(--accent);
   color: #0a192f;
-}
 
+  box-shadow: 0 6px 14px rgba(10, 25, 47, 0.12);
+}
 
 .footer-links a {
   animation: pulse 3s infinite;
@@ -315,18 +342,17 @@ body.dark-mode .skill-badges span {
 }
 
 
-/* ====== Hover effect for About Text ====== */
-/* ====== Smooth Hover Effect for About Text ====== */
 .about-text p {
-  transition: transform 0.7s ease, font-weight 0.7s ease, color 0.5s ease;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .about-text p:hover {
-  font-weight: 600;
-  transform: scale(1.03);
-  cursor: text;
+  transform: translateY(-4px);
+  background-color: rgba(129, 129, 142, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
-/* ====== LIST STYLING ====== */
+
 ul {
   list-style: none;
   padding-left: 1rem;
@@ -338,7 +364,31 @@ ul li::before {
   margin-right: 8px;
 }
 
-/* ====== FOOTER ====== */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  margin: 2.2rem 0;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
+
+  opacity: 0.6;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(10, 25, 47, 0.95);
+  color: #a8b2d1;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
 .footer-links {
   display: flex;
   justify-content: center;
@@ -358,19 +408,24 @@ ul li::before {
   transform: scale(1.3) rotate(-5deg);
 }
 
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: rgba(10, 25, 47, 0.95);
-  color: #a8b2d1;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;
+.footer-links .svg-icon img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-links .svg-icon:hover img {
+  transform: scale(1.15);
+  filter: grayscale(0%);
+}
+
+body.dark .footer-links .svg-icon img {
+  filter: invert(1);
 }
 
 
-/* ====== VOLUNTEERING GALLERY ====== */
 .vol-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -379,7 +434,7 @@ footer {
 }
 
 .vol-gallery img {
-  width: calc(33% - 0.66rem); /* 3 images per row */
+  width: calc(33% - 0.66rem);
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -390,20 +445,18 @@ footer {
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .vol-gallery img {
-    width: calc(50% - 0.5rem); /* 2 images per row on tablet */
+    width: calc(50% - 0.5rem); 
   }
 }
 
 @media (max-width: 480px) {
   .vol-gallery img {
-    width: 100%; /* 1 image per row on mobile */
+    width: 100%; 
   }
 }
 
-/* ====== ICPC SPECIAL GALLERY ====== */
 .icpc-gallery {
   display: flex;
   gap: 1rem;
@@ -411,12 +464,12 @@ footer {
 }
 
 .icpc-gallery img:first-child {
-  flex: 1; /* 1/3 of width roughly */
+  flex: 1; 
   min-width: 100px;
 }
 
 .icpc-gallery img:last-child {
-  flex: 2; /* 2/3 of width */
+  flex: 2; 
   min-width: 200px;
 }
 
@@ -432,15 +485,12 @@ footer {
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .icpc-gallery img {
-    flex: 1 1 100%; /* stack on smaller screens */
+    flex: 1 1 100%; 
   }
 }
 
-
-/* ====== CERTIFICATES ====== */
 .cert-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -472,9 +522,7 @@ footer {
   transform: scale(1.05);
 }
 
-/* ====== ARTICLES / PROJECTS ====== */
 article {
-  /* background: #fff; */
   background: var(--card-bg);
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -488,23 +536,25 @@ article:hover {
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* GitHub icon next to project title */
 h2 a i.fab.fa-github {
-  color: #333; /* GitHub dark gray */
+  color: #333; 
   margin-left: 0.5rem;
   font-size: 1.2rem;
   transition: color 0.3s, transform 0.3s;
   vertical-align: middle;
 }
 
-h2 a i.fab.fa-github:hover {
+body.dark-mode h2 a i.fab.fa-github {
+  color: #ffffff;
+}
+
+
+h2 a i.fab.fa-github:hover,
+body.dark-mode h2 a i.fab.fa-github:hover {
   color: #64ffda;
   transform: scale(1.3);
 }
 
-
-
-/* ====== RESPONSIVE ====== */
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
@@ -530,7 +580,6 @@ h2 a i.fab.fa-github:hover {
   }
 }
 
-/* ====== ACTIVITIES ====== */
 .activity {
   margin-bottom: 3rem;
   text-align: center;
@@ -550,31 +599,84 @@ h2 a i.fab.fa-github:hover {
   border-left: 4px solid var(--accent);
 }
 
-
-/* ====== IMAGE SLIDER ====== */
-/* ====== FIXED IMAGE SLIDER ====== */
 .slider {
   position: relative;
   width: 100%;
-  max-width: 800px;
-  height: 420px;            /* 🔒 fixed height */
-  margin: auto;
+  max-width: 100%; 
+  margin: 1rem auto;
   overflow: hidden;
-  border-radius: 14px;
-  background: #0a192f;     /* fallback background */
+  border-radius: 12px;
+  background: #0a192f;
 }
 
 .slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* 🔑 prevents stretching */
+  object-fit: cover;
   display: block;
   transition: opacity 0.4s ease;
 }
 
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: #64ffda;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
 
-/* Arrows */
-/* ====== SLIDER ARROWS ====== */
+.slider button:hover {
+  background: #64ffda;
+  color: #0a192f;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.5);
+}
+
+.slider .prev { left: 16px; }
+.slider .next { right: 16px; }
+
+.slider-icpc {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+}
+
+.slider-nasa {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 350px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 250px; 
+  }
+}
+
 .slider button {
   position: absolute;
   top: 50%;
@@ -630,4 +732,23 @@ h2 a i.fab.fa-github:hover {
   transform: scale(1.2);
   color: #fff;
 }
+
+@media (max-width: 600px) {
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 1.2rem 1.6rem;                  
+    justify-items: center;
+  }
+
+  .footer-links a {
+    font-size: 1.6rem;
+  }
+
+  .footer-links .svg-icon img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 
