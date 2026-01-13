@@ -324,7 +324,6 @@ body.dark-mode .skill-badges span {
   border: 1px solid rgba(100, 255, 218, 0.25);
 }
 
-/* ===== Light Mode Skill Hover ===== */
 .skill-badges span:hover {
   transform: translateY(-2px) scale(1.05);
   color: #0a192f;
@@ -379,6 +378,24 @@ ul li::before {
   opacity: 0.6;
 }
 
+
+
+.footer-links a, 
+.footer-links a.svg-icon img {
+  transition: all 0.3s ease;
+}
+
+.footer-links a i,
+.footer-links a.svg-icon img {
+  color: #64ffda; 
+}
+
+.footer-links a:hover i,
+.footer-links a:hover.svg-icon img {
+  color: inherit;
+  filter: none;
+}
+
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -412,13 +429,14 @@ footer {
   width: 22px;
   height: 22px;
   display: block;
-  filter: grayscale(100%);
+  filter: brightness(0) saturate(100%) invert(65%) sepia(67%) saturate(4654%) hue-rotate(147deg) brightness(101%) contrast(97%);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+
 .footer-links .svg-icon:hover img {
   transform: scale(1.15);
-  filter: grayscale(0%);
+  filter: none;
 }
 
 body.dark .footer-links .svg-icon img {
@@ -750,5 +768,4 @@ body.dark-mode h2 a i.fab.fa-github:hover {
     height: 26px;
   }
 }
-
 
