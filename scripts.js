@@ -122,3 +122,37 @@ document.querySelectorAll('.slider').forEach(slider => {
     updateImage();
   });
 });
+
+const counters = document.querySelectorAll('.stat-number');
+
+const runCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.dataset.target;
+    const speed = 120;
+
+    const update = () => {
+      const current = +counter.innerText;
+      const increment = Math.ceil(target / speed);
+
+      if (current < target) {
+        counter.innerText = current + increment;
+        setTimeout(update, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    update();
+  });
+};
+
+// Trigger animation when section is visible
+const observer = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    runCounters();
+    observer.disconnect();
+  }
+}, { threshold: 0.4 });
+
+observer.observe(document.querySelector('.stats-section'));
+
