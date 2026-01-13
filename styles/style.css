@@ -289,6 +289,11 @@ main {
   margin-bottom: 50px;
   color: var(--accent);
 }
+.stats-grid a.stat-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .stats-grid {
   display: grid;
