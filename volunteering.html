@@ -113,6 +113,33 @@
     <p>© 2026 Ahmed Diab | All Rights Reserved</p>
     </footer>
 
-  <script src="scripts/script.js"></script>
-</body>
+      <!-- ===== Mini AI Chatbot ===== -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+      <i class="fas fa-robot"></i>
+    </div>
+
+    <div class="chatbot" id="chatbot">
+      <div class="chatbot-header">
+        <span>Ask Ahmed </span>
+        <button id="chatbotClose">&times;</button>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages">
+        <div class="bot-message">
+          Hi 👋 Ask me about Ahmed`s skills, projects, or experience.
+        </div>
+      </div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Ask a question..." />
+        <button id="sendBtn">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/chatbot.js"></script>
+
+  </body>
 </html>

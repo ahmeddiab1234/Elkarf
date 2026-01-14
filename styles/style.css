@@ -884,3 +884,124 @@ body.dark-mode h2 a i.fab.fa-github:hover {
   }
 }
 
+/* ===== Mini AI Chatbot ===== */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  color: #0a192f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+  box-shadow: 0 12px 30px rgba(100,255,218,0.45);
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chatbot {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 320px;
+  max-height: 420px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.chatbot-header {
+  background: #0a192f;
+  color: var(--accent);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.chatbot-header button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  padding: 14px;
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+.bot-message,
+.user-message {
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: 85%;
+}
+
+.bot-message {
+  background: rgba(100,255,218,0.15);
+  align-self: flex-start;
+}
+
+.bot-message a {
+  color: #64ffda;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bot-message a:hover {
+  text-decoration: underline;
+  color: #4be3c1;
+}
+
+
+.user-message {
+  background: #0a192f;
+  color: #fff;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.chatbot-input input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.chatbot-input button {
+  background: var(--accent);
+  border: none;
+  padding: 0 16px;
+  cursor: pointer;
+  color: #0a192f;
+  font-size: 1rem;
+}
+
+
+
+
