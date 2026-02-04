@@ -557,6 +557,10 @@ footer {
 body.dark .footer-links .svg-icon img {
   filter: invert(1);
 }
+ /* body.dark-mode .footer-links .svg-icon img {
+  filter: invert(1);
+} */
+
 
 
 .vol-gallery {
@@ -735,16 +739,20 @@ body.dark-mode h2 a i.fab.fa-github:hover {
 .slider {
   position: relative;
   width: 100%;
-  max-width: 100%; 
+  max-width: 700px;    
+  aspect-ratio: 16 / 9;
   margin: 1rem auto;
   overflow: hidden;
   border-radius: 12px;
   background: #0a192f;
 }
 
+
+
 .slider img {
   width: 100%;
-  height: 100%;
+  height: auto;         
+  aspect-ratio: inherit;
   object-fit: cover;
   display: block;
   transition: opacity 0.4s ease;
@@ -791,24 +799,26 @@ body.dark-mode h2 a i.fab.fa-github:hover {
   height: 400px;
 }
 
-.slider img {
+/* ===== Certificates sliders: fixed rectangle ===== */
+#certificates .slider {
+  aspect-ratio: auto;     
+  height: 450px;          
+  max-width: 700px;
+}
+
+#certificates .slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  object-fit: contain;  
+  background: #0a192f;
 }
 
-@media (max-width: 768px) {
-  .slider {
-    height: 350px; 
+@media (max-width: 600px) {
+  #certificates .slider {
+    height: 300px;
   }
 }
 
-@media (max-width: 480px) {
-  .slider {
-    height: 250px; 
-  }
-}
 
 .slider button {
   position: absolute;
