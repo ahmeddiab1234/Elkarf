@@ -799,7 +799,7 @@ body.dark-mode h2 a i.fab.fa-github:hover {
   height: 400px;
 }
 
-/* ===== Certificates sliders: fixed rectangle ===== */
+/* ===== Certificates sliders: fixed rectangle =====
 #certificates .slider {
   aspect-ratio: auto;     
   height: 450px;          
@@ -817,7 +817,7 @@ body.dark-mode h2 a i.fab.fa-github:hover {
   #certificates .slider {
     height: 300px;
   }
-}
+} */
 
 
 .slider button {
