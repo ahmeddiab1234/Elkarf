@@ -9,7 +9,6 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
-
 </head>
 <body>
   <header class="hero">
@@ -29,6 +28,7 @@
         <a href="volunteering.html">Volunteering</a>
         <a href="certificates.html">Certificates</a>
         <a href="activities.html">Activities</a>
+        
       <a
         href="https://drive.google.com/file/d/1Z_poWAoq5VlRwFx4dAJ8nV3TDaenh9YG/view?usp=sharing"
         target="_blank"
@@ -41,7 +41,7 @@
   </header>
 
   <main>
-    <section id="project-list">
+      <!-- ── ML / Data Science ── -->
 
       <article>
         <h2>
@@ -59,7 +59,7 @@
 
       <article>
         <h2>
-          Credit Card Fraud Detection 
+          Credit Card Fraud Detection
           <a href="https://github.com/ahmeddiab1234/Credit_Card_Fraud_Detection" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
@@ -71,9 +71,25 @@
         </ul>
       </article>
 
-      <article>
+      <article">
         <h2>
-          Mini_Rag Application 
+          Superstore EDA
+          <a href="https://github.com/ahmeddiab1234/SuperStor_EDA" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li>In-depth EDA of the Superstore Dataset using a <strong>Jupyter Notebook</strong>, covering sales, profit, categories, regions, and customer segments.</li>
+          <li>Uncovered performance trends and feature relationships to drive actionable business insights.</li>
+          <li>Visualizations highlight patterns across time, geography, and product lines.</li>
+        </ul>
+      </article>
+
+      <!-- ── AI / RAG / Automation ── -->
+
+      <article data-category="rag">
+        <h2>
+          Mini_Rag Application
           <a href="https://github.com/ahmeddiab1234/mini-RAG" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
@@ -85,74 +101,199 @@
         </ul>
       </article>
 
-      <article>
+      <article data-category="automation">
         <h2>
-          Car Price Prediction 
-          <a href="https://github.com/ahmeddiab1234/End-to-End-Car-Price-prediction" target="_blank" title="GitHub">
+          Job Application Tracker
+          <a href="https://github.com/ahmeddiab1234/Job-Application-Tracker" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
         </h2>
         <ul>
-          <li>Predicts car prices based on multiple features including ID, Price, Levy, Manufacturer, Model, Production year, Category, Leather interior, Fuel type, Engine volume, Mileage, Cylinders, Gear box type, Drive wheels, Doors, Wheel, Color, Airbags, and Random_notes.</li>
-          <li>Implemented using regression models to estimate accurate pricing.</li>
+          <li>Automated job application tracking system built with <strong>n8n</strong>.</li>
+          <li>Monitors Gmail for sent applications and incoming replies, logs everything to <strong>Google Sheets</strong>.</li>
+          <li>Sends instant <strong>Telegram</strong> notifications — with zero manual data entry.</li>
+        </ul>
+      </article>
+
+      <article >
+        <h2>
+          AI Newsletter Digest 
+          <a href="https://github.com/ahmeddiab1234/02_AI_newsletter_digest" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li>Pulls articles daily from 5–10 <strong>RSS feeds</strong> (tech, news, niche topics) via n8n.</li>
+          <li>Sends each article to an AI to produce a 2-sentence summary, then groups them by topic.</li>
+          <li>Delivers a structured, noise-free digest straight to your <strong>email</strong> every morning.</li>
+        </ul>
+      </article>
+
+      <!-- ── Hackathon ── -->
+
+      <article >
+        <h2>
+          Will It Rain On My Parade?
+          <a href="https://github.com/ahmeddiab1234/Will-it-rain-on-my-parade" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li>Backend for a weather likelihood app reporting chances of adverse conditions (heat, cold, rain, wind, humidity) for a user-selected location and date.</li>
+          <li>Built with <strong>Laravel 11</strong> (PHP 8.2), <strong>PostgreSQL</strong>, and the <strong>Open-Meteo</strong> forecast & geocoding APIs; supports city name or lat/lon input up to +14 days ahead.</li>
+          <li>Personal role: weather data analysis and insights extraction.</li>
+        </ul>
+      </article>
+
+      <!-- ── Console Projects ── -->
+
+      <article >
+        <h2>
+          Ask Me App
+          <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/AskMe" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li>Interactive <strong>Python</strong> console app where users ask questions and receive structured responses.</li>
+          <li>Follows clean project architecture, virtual environment isolation, and Python best practices.</li>
+          <li>Modular codebase designed for readability and easy extension.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>
+          Contact Management System
+          <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Contact_Management_System" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li><strong>C++</strong> system to store, update, delete, and manage contact details efficiently.</li>
+          <li>Leverages a custom <strong>templated Array</strong> data structure for dynamic storage.</li>
+          <li>Advanced features include reverse sorting and persistent save/load to file.</li>
+        </ul>
+      </article>
+
+      <article >
+        <h2>
+          Employee Manager
+          <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Employees_Project" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li><strong>Python</strong> console project with a clean separation of concerns across <code>EmployeeManager.py</code> and <code>FrontEndManager.py</code>.</li>
+          <li>Backend handles all business logic for managing employee records.</li>
+          <li>Frontend layer provides a user-friendly console interface.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>
+          Expedia Project
+          <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Expedia_Project/src" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li><strong>Python</strong> travel-management console app structured with dedicated backend, frontend, and <code>driver.py</code> entry point.</li>
+          <li>Simulates booking and itinerary management workflows.</li>
+          <li>Clear layered architecture separating data logic from user interaction.</li>
+        </ul>
+      </article>
+
+      <article >
+        <h2>
+          Library Management System
+          <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Library_Project" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li><strong>Python</strong> library app split across <code>BackEndLibrary.py</code>, <code>FrontEndLibrary.py</code>, and <code>LibraryManager.py</code>.</li>
+          <li>Handles book cataloguing, borrowing, and returning operations.</li>
+          <li>Includes a dedicated test file (<code>LibraryManager_Tests.py</code>) for unit validation.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>
+          Payroll Project
+          <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Payroll_Project" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li><strong>Python</strong> payroll system covering employee records, invoice generation, and payroll printing.</li>
+          <li>Modular design across <code>Employees.py</code>, <code>Invoices_Payroll.py</code>, <code>Payroll_Printing.py</code>, and <code>Validations.py</code>.</li>
+          <li>Input validation layer ensures data integrity throughout the workflow.</li>
+        </ul>
+      </article>
+
+      <article >
+        <h2>
+          Hospital Management System
+          <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Project1_Hospital" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li><strong>Python</strong> hospital management app structured into backend, frontend, models, and tests layers with a <code>main.py</code> entry point.</li>
+          <li>Manages patient records, appointments, and hospital operations with full test coverage.</li>
+          <li>Documented with detailed project spec PDFs included in the repository.</li>
         </ul>
       </article>
 
     </section>
   </main>
 
-    <footer>
+  <footer>
     <div class="footer-links">
-        <a href="mailto:shhth0034@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-
-        <a href="https://www.linkedin.com/in/ahmed-diab-3b0631245/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/ahmeddiab1234" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.kaggle.com/codecaoch" target="_blank" title="Kaggle"><i class="fab fa-kaggle"></i></a>
-        <a href="https://drive.google.com/drive/folders/1oT8mVMmeifI7HQgI4FFCp1E7QgF-vAZr" target="_blank" title="CV"><i class="fas fa-file-alt"></i></a>
-        <a href="https://x.com/AhmedDiap110531" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://wa.me/201154439904" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.youtube.com/@AhmedDi6b" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-
-        <a href="https://codeforces.com/profile/Ahmed_Di7b" target="_blank" title="Codeforces" class="svg-icon">
-          <img src="assets/codeforces.svg" alt="Codeforces">
-        </a>
-
-        <a href="https://leetcode.com/u/f9QcZm2R1P/" target="_blank" title="LeetCode" class="svg-icon">
-          <img src="assets/leetcode.svg" alt="LeetCode">
-        </a>
-
+      <a href="mailto:shhth0034@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/ahmed-diab-3b0631245/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ahmeddiab1234" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.kaggle.com/codecaoch" target="_blank" title="Kaggle"><i class="fab fa-kaggle"></i></a>
+      <a href="https://drive.google.com/drive/folders/1oT8mVMmeifI7HQgI4FFCp1E7QgF-vAZr" target="_blank" title="CV"><i class="fas fa-file-alt"></i></a>
+      <a href="https://x.com/AhmedDiap110531" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/201154439904" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.youtube.com/@AhmedDi6b" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://codeforces.com/profile/Ahmed_Di7b" target="_blank" title="Codeforces" class="svg-icon">
+        <img src="assets/codeforces.svg" alt="Codeforces">
+      </a>
+      <a href="https://leetcode.com/u/f9QcZm2R1P/" target="_blank" title="LeetCode" class="svg-icon">
+        <img src="assets/leetcode.svg" alt="LeetCode">
+      </a>
     </div>
-
     <p>© 2026 Ahmed Diab | All Rights Reserved</p>
-    </footer>
+  </footer>
 
-      <!-- ===== Mini AI Chatbot ===== -->
-    <div class="chatbot-toggle" id="chatbotToggle">
-      <i class="fas fa-robot"></i>
+  <!-- ===== Mini AI Chatbot ===== -->
+  <div class="chatbot-toggle" id="chatbotToggle">
+    <i class="fas fa-robot"></i>
+  </div>
+
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot-header">
+      <span>Ask Ahmed</span>
+      <button id="chatbotClose">&times;</button>
     </div>
 
-    <div class="chatbot" id="chatbot">
-      <div class="chatbot-header">
-        <span>Ask Ahmed </span>
-        <button id="chatbotClose">&times;</button>
-      </div>
-
-      <div class="chatbot-messages" id="chatMessages">
-        <div class="bot-message">
-          Hi 👋 Ask me about Ahmed`s skills, projects, or experience.
-        </div>
-      </div>
-
-      <div class="chatbot-input">
-        <input type="text" id="chatInput" placeholder="Ask a question..." />
-        <button id="sendBtn">
-          <i class="fas fa-paper-plane"></i>
-        </button>
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="bot-message">
+        Hi 👋 Ask me about Ahmed's skills, projects, or experience.
       </div>
     </div>
 
-    <script src="scripts/script.js"></script>
-    <script src="scripts/chatbot.js"></script>
+    <div class="chatbot-input">
+      <input type="text" id="chatInput" placeholder="Ask a question..." />
+      <button id="sendBtn">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
 
-  </body>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/chatbot.js"></script>
+</body>
 </html>
