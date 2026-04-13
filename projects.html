@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Ahmed Diab</title>
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/filter.css" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -40,10 +41,21 @@
     </div>
   </header>
 
+  
+  <section class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ml">ML</button>
+    <button class="filter-btn" data-filter="data">Data Analysis</button>
+    <button class="filter-btn" data-filter="rag">RAG</button>
+    <button class="filter-btn" data-filter="automation">Automation</button>
+    <button class="filter-btn" data-filter="console">Console</button>
+    <button class="filter-btn" data-filter="hackathon">Hackathon</button>
+  </section>
+  
   <main>
       <!-- ── ML / Data Science ── -->
 
-      <article>
+      <article data-category="ml">
         <h2>
           NYC Trip Duration Project
           <a href="https://github.com/ahmeddiab1234/NYC_Trip_Duration" target="_blank" title="GitHub">
@@ -57,7 +69,7 @@
         </ul>
       </article>
 
-      <article>
+      <article data-category="ml">
         <h2>
           Credit Card Fraud Detection
           <a href="https://github.com/ahmeddiab1234/Credit_Card_Fraud_Detection" target="_blank" title="GitHub">
@@ -71,7 +83,7 @@
         </ul>
       </article>
 
-      <article">
+      <article data-category="data">
         <h2>
           Superstore EDA
           <a href="https://github.com/ahmeddiab1234/SuperStor_EDA" target="_blank" title="GitHub">
@@ -115,7 +127,7 @@
         </ul>
       </article>
 
-      <article >
+      <article data-category="automation">
         <h2>
           AI Newsletter Digest 
           <a href="https://github.com/ahmeddiab1234/02_AI_newsletter_digest" target="_blank" title="GitHub">
@@ -129,9 +141,38 @@
         </ul>
       </article>
 
+      <article data-category="automation">
+        <h2>
+          Social Media Content Pipeline
+          <a href="https://github.com/ahmeddiab1234/Social_media_content_pipeline" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li>Automated content pipeline built with <strong>n8n</strong> transforming raw ideas from <strong>Obsidian</strong> into platform-specific posts.</li>
+          <li>Generates optimized content for <strong>LinkedIn</strong>, <strong>Facebook</strong>, and <strong>X (Twitter)</strong>.</li>
+          <li>Includes a human-in-the-loop review step before publishing to ensure quality and control.</li>
+        </ul>
+      </article>
+
+      <article data-category="automation">
+        <h2>
+          Customer Support Auto-Responder
+          <a href="https://github.com/ahmeddiab1234/Customer_support_auto_responder" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </h2>
+        <ul>
+          <li>AI-powered <strong>n8n</strong> workflow that classifies incoming support emails automatically.</li>
+          <li>Instantly replies to FAQs in under a minute while escalating complex cases to human agents.</li>
+          <li>Maintains full context and logs for efficient support handling and team collaboration.</li>
+          <li><strong>Overview:</strong> Reduces manual triaging for small teams by automating repetitive support tasks while preserving human oversight.</li>
+        </ul>
+      </article>
+
       <!-- ── Hackathon ── -->
 
-      <article >
+      <article data-category="hackathon">
         <h2>
           Will It Rain On My Parade?
           <a href="https://github.com/ahmeddiab1234/Will-it-rain-on-my-parade" target="_blank" title="GitHub">
@@ -147,7 +188,7 @@
 
       <!-- ── Console Projects ── -->
 
-      <article >
+      <article data-category="console">
         <h2>
           Ask Me App
           <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/AskMe" target="_blank" title="GitHub">
@@ -161,7 +202,7 @@
         </ul>
       </article>
 
-      <article>
+      <article data-category="console">
         <h2>
           Contact Management System
           <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Contact_Management_System" target="_blank" title="GitHub">
@@ -175,7 +216,7 @@
         </ul>
       </article>
 
-      <article >
+      <article data-category="console">
         <h2>
           Employee Manager
           <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Employees_Project" target="_blank" title="GitHub">
@@ -189,7 +230,7 @@
         </ul>
       </article>
 
-      <article>
+      <article data-category="console">
         <h2>
           Expedia Project
           <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Expedia_Project/src" target="_blank" title="GitHub">
@@ -203,7 +244,7 @@
         </ul>
       </article>
 
-      <article >
+      <article data-category="console">
         <h2>
           Library Management System
           <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Library_Project" target="_blank" title="GitHub">
@@ -217,7 +258,7 @@
         </ul>
       </article>
 
-      <article>
+      <article data-category="console">
         <h2>
           Payroll Project
           <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Payroll_Project" target="_blank" title="GitHub">
@@ -231,7 +272,7 @@
         </ul>
       </article>
 
-      <article >
+      <article data-category="console">
         <h2>
           Hospital Management System
           <a href="https://github.com/ahmeddiab1234/Console_Projcts/tree/main/Project1_Hospital" target="_blank" title="GitHub">
@@ -295,5 +336,6 @@
 
   <script src="scripts/script.js"></script>
   <script src="scripts/chatbot.js"></script>
+  <script src="scripts/filter.js"></script>
 </body>
 </html>
