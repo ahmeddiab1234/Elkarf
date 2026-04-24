@@ -6,7 +6,8 @@ const sendBtn = document.getElementById("sendBtn");
 const messages = document.getElementById("chatMessages");
 
 // API Configuration
-const API_URL = 'http://localhost:3001';
+// const API_URL = 'http://localhost:3001';
+const API_URL = 'elkarf-production.up.railway.app';
 let isLoading = false;
 
 toggleBtn_.onclick = () => {
