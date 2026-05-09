@@ -1,5 +1,6 @@
 # *.pdf
 .env
+*.pdf
 
 ### AL ###
 #Template for AL projects for Dynamics 365 Business Central
