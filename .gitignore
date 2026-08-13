@@ -5,7 +5,8 @@
 
 
 !group_activity\video-demo.mp4
-!E:\Main_Folder\Personal_Website\assets\group_activity
+!/assets/group_activity/
+!/assets/group_activity/**
 ### AL ###
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
